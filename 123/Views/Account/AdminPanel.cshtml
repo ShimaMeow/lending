@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Kursova9.Models.Messeng>
+@{
+	Layout = "_Layout";
+	ViewData["Title"] = "Админпанель";
+}
+
+@{ if (ViewBag.Error != null)
+	{
+		<p>@ViewBag.Error</p>
+	}
+}
+
+
+<div class="tab-content">
+	<div class="tab-pane active" id="home" role="tabpanel">
+		<table class="table table-bordered table-dark">
+			<thead>
+				<tr>
+					<td scope="col">#</td>
+					<td scope="col">Имя</td>
+					<td scope="col">Фамилия</td>
+					<td scope="col">Email</td>
+					<td scope="col">Коментарий</td>
+					<td scope="col">Статус заявки</td>
+					<td scope="col">Редактирование</td>
+					<td scope="col">Удаление</td>
+				</tr>
+			</thead>
+			<tbody>
+				@{
+					int i = 1;
+				}
+				@foreach (var messeng in Model)
+
+
+				{
+				<tr>
+					<td scope="row">@i</td>
+					<td>@messeng.Name</td>
+					<td>@messeng.SyrName</td>
+					<td>@messeng.Email</td>
+					<td>@messeng.Comment</td>
+					<td>@messeng.State</td>
+					<td><a href="/Account/Editing/@messeng.Id" role="button" class="btn btn-light">Редактировать</a></td>
+					<td><a href="/Account/Delete/@messeng.Id" role="button" class="btn btn-light">Удалить</a></td>
+				</tr>
+					{
+						i = i + 1;
+					}
+
+				}
+			</tbody>
+		</table>
+	</div>
+
+</div>

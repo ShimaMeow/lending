@@ -1,0 +1,44 @@
+﻿@{
+	Layout = "_Layout";
+	ViewData["Title"] = "Скачать читы";
+}
+
+<main role="main" class="pb-3">
+	<img src="/2.png">
+	<form style="margin-top: 250px; margin: 50px auto; width: 600px
+	" action="/Home/Messeng" method="post">
+		<p style="margin-left: 28%; color: white;font-size: 150%">Подать заявку на заказ чита</p>
+		<div class="form-group">
+			<input type="text" name="Name" class="form-control" placeholder=" Имя">
+		</div>
+		<div class="form-group">
+			<input type="text" name="SyrName" class="form-control" placeholder=" Фамилия">
+		</div>
+		<div class="form-group">
+			<input type="text" name="Email" class="form-control" placeholder=" Почта">
+		</div>
+		<div class="form-group">
+
+			<textarea name="Comment" style="resize:none; width:600px;" wrap="hard" placeholder="Комментарий" cols="10" maxlength="200" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+		</div>
+		<input type="hidden" name="Note" value="">
+		<input type="hidden" name="State" value="Не обработана">
+		<button style="margin-left:40%" type="submit">Отправить</button>
+
+
+	</form>
+	<h2 style="text-align: center; color:white; margin-bottom:50px">Преимущества чита</h2>
+	<img src="/3.png">
+	<h6 style="		text-align: center;
+		color: white;
+		margin-bottom: 20px;
+		margin-top: 50px">
+		Ты можешь оплатить любым удобным способом:
+	</h6>
+	<div style="margin-left: 31%;">
+		<img src="/4.jpg">
+		<img src="/5.jpg">
+		<img src="/6.jpg">
+		<img src="/7.jpg">
+	</div>
+</main>

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Заявка";
+}
+
+<p>@ViewBag.Messeng.Name @ViewBag.Messeng.SyrName оставил коментарий: @ViewBag.Messeng.Comment</p> <hr />
+<br />
+Почта: @ViewBag.Messeng.Email<hr />
+<br />
+
+<form action="/Account/Editing" method="post">
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Статус заявки</label>
+        <select name="State" class="form-control" id="exampleFormControlSelect1">
+            <option>Не обработана</option>
+            <option>Находится в обработке</option>
+            <option>Обработана</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Заметка</label>
+        <textarea  name="Note" class="form-control" id="exampleFormControlTextarea1" rows="3">@ViewBag.Messeng.Note</textarea>
+    </div>
+    <input type="hidden" name="Id" value="@ViewBag.Messeng.Id">
+    <input type="hidden" name="Name" value="@ViewBag.Messeng.Name">
+    <input type="hidden" name="SyrName" value="@ViewBag.Messeng.SyrName">
+    <input type="hidden" name="Email" value="@ViewBag.Messeng.Email">
+    <input type="hidden" name="Comment" value="@ViewBag.Messeng.Comment">
+    <button style="float:right" class="btn btn-light" type="submit">Сохранить</button>
+</form>
